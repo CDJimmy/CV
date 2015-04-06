@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#webrick 
+gem 'thin'
+
 # Ruby version
 ruby '2.2.1'
 
