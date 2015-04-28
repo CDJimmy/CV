@@ -1,0 +1,189 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//variables
+$primary-color: #003346
+
+//mixins
+//generic transform
+@mixin transform($transforms)
+  -moz-transform: $transforms
+  -o-transform: $transforms
+  -ms-transform: $transforms
+  -webkit-transform: $transforms
+  transform: $transforms
+
+//standar for all animations
+@mixin keyframes($name)
+  @-webkit-keyframes $name
+    @content
+  @-moz-keyframes $name
+    @content
+  @-ms-keyframes $name
+    @content
+  @-o-keyframes $name
+    @content
+//animation
+@mixin animation($animation...)
+  -o-animation: $animation
+  -moz-animation: $animation
+  -webkit-animation: $animation
+  animation: $animation
+//animation-name
+@mixin animation-name($name...)
+  -webkit-animation-name: $name
+  -moz-animation-name: $name
+  -ms-animation-name: $name
+  -o-animation-name: $name
+  animation-name: $name  
+//animation-duration
+@mixin animation-duration($duration...)
+  -webkit-animation-duration: $duration
+  -moz-animation-duration: $duration
+  -ms-animation-duration: $duration
+  -o-animation-duration: $duration
+  animation-duration: $duration
+//animation-timing-function
+@mixin animation-timing-function($timing-function...)
+  -webkit-animation-timing-function: $timing-function
+  -moz-animation-timing-function: $timing-function
+  -ms-animation-timing-function: $timing-function
+  -o-animation-timing-function: $timing-function
+  animation-timing-function: $timing-function  
+//animation-iteration-count
+@mixin animation-iteration-count($iteration-count...)
+  -webkit-animation-iteration-count: $iteration-count
+  -moz-animation-iteration-count: $iteration-count
+  -ms-animation-iteration-count: $iteration-count
+  -o-animation-iteration-count: $iteration-count
+  animation-iteration-count: $iteration-count
+//rotate
+@mixin rotate ($deg)
+  @include transform(rotate(#{$deg}deg))
+//scale
+@mixin scale($scale)
+  @include transform(scale($scale))
+//skew
+@mixin skew ($x, $y)
+  @include transform(skew(#{$x}deg, #{$y}deg))
+
+@font-face
+  font-family: 'first-font'
+  src: url(/assets/Square.eot)
+  src: url(/assets/Square.eot?#iefix) format("embedded-opentype"), url(/assets/Square.ttf) format("truetype"), url(/assets/Square.woff) format("woff"), url(/assets/Square.svg#Square) format("svg")
+  font-weight: normal
+  font-style: normal
+
+//rotation
+@keyframes rotation
+  from 
+    +rotate(0)
+  to
+    +rotate(360)
+
+#presentation
+  top: 10px
+  height: 450px
+.circle
+  border: 2px solid white
+  border-radius: 50%
+  height: 60px
+  width: 60px
+  position: absolute
+
+#pres-top
+  height: 90px
+  display: table
+  margin:
+    left: auto
+    right: auto
+  width: 360px
+#circle-top-left
+  margin-top: 30px
+#circle-top-middle
+  margin-left: 140px
+#circle-top-right
+  margin-left: 280px
+  margin-top: 30px
+
+#pres-middle
+  height: 350px
+  min-width: 580px
+  display: table
+  margin:
+    left: auto
+    right: auto
+#trapezoid
+  border-top: 180px solid white
+  z-index: 4
+  width: 580px
+  margin-top: 70px
+#trapezoid, #trapezoid-inside
+  border:
+    left: 18px ridge transparent
+    right: 35px ridge transparent
+  height: 0
+  width: 580px
+  +skew(0,-1)
+  position: absolute
+#trapezoid-inside
+  border-top: 176px solid $primary-color
+  z-index: 5
+  width: 576px
+  margin:
+    left: 2px
+    top: 72px
+#who-i-am
+  color: white
+  font:
+    family: 'first-font'
+    size: 42px
+  margin-top: 134px
+  position: absolute
+  text-align: center
+  text-shadow: 1px 1px 1px
+  width: 580px
+  z-index: 6
+#circle
+  border: 2px solid white
+  border-radius: 50%
+  height: 300px
+  position: absolute
+  width: 300px
+  margin:
+    left: 130px
+    top: 20px
+  z-index: 3
+#circle-inside
+  border: 4px solid white
+  border-radius: 50%
+  height: 288px
+  position: absolute
+  margin-left: 137px
+  margin-top: 26px
+  width: 288px
+  z-index: 1
+#burst-12
+  position: relative
+  text-align: center
+#burst-12, #burst-12:before, #burst-12:after
+  height: 230px
+  width: 230px
+  left: 167px
+  top: 56px
+  background: $primary-color
+  +animation-name(rotation)
+  +animation-duration(20s)
+  +animation-iteration-count(infinite)
+  +animation-timing-function(linear)
+  z-index: 2
+#burst-12:before, #burst-12:after
+  content: ""
+  position: absolute
+  top: 0
+  left: 0
+#burst-12:before
+  +rotate(30)
+#burst-12:after
+  +rotate(60)

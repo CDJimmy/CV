@@ -19,13 +19,11 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+fr:
   presentation:
     me: "Jimmy Charrier"
-    hello: "Hello world"
-    title: "%{man}'s Career portfolio"
-    who: "Who is %{man} ?"
-
-
+    hello: "Bonjour monde"
+    title: "Portfolio de %{man}"
+    who: "Qui est %{man} ?"
 
 

@@ -9,8 +9,21 @@ ruby '2.2.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+# Use Internationalization support for Ruby
+gem 'i18n'
+
+group :assets do
+  gem 'compass-colors'
+  gem 'sassy-buttons'
+  # Use SCSS for stylesheets
+  gem 'sass-rails', '~> 5.0'
+  # Use compass for sass framework
+  gem 'compass-rails'
+end
+
+# Use bootstrap for responsive design
+gem 'bootstrap-sass', '~> 3.3.4'
+gem 'autoprefixer-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -19,7 +32,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 4.0.3'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
