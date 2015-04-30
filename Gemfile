@@ -19,6 +19,8 @@ group :assets do
   gem 'sass-rails', '~> 5.0'
   # Use compass for sass framework
   gem 'compass-rails'
+  # Use HAML
+  #gem "haml-rails", "~> 0.9"
 end
 
 # Use bootstrap for responsive design

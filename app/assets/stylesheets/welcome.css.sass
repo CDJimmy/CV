@@ -58,6 +58,14 @@ $primary-color: #003346
   -ms-animation-iteration-count: $iteration-count
   -o-animation-iteration-count: $iteration-count
   animation-iteration-count: $iteration-count
+//animation-fill-mode
+@mixin animation-fill-mode($fill-mode...)
+  -webkit-animation-fill-mode: $fill-mode
+  -moz-animation-fill-mode: $fill-mode
+  -ms-animation-fill-mode: $fill-mode
+  -o-animation-fill-mode: $fill-mode
+  animation-fill-mode: $fill-mode
+
 //rotate
 @mixin rotate ($deg)
   @include transform(rotate(#{$deg}deg))
@@ -74,6 +82,19 @@ $primary-color: #003346
   src: url(/assets/Square.eot?#iefix) format("embedded-opentype"), url(/assets/Square.ttf) format("truetype"), url(/assets/Square.woff) format("woff"), url(/assets/Square.svg#Square) format("svg")
   font-weight: normal
   font-style: normal
+@font-face
+  font-family: 'second-font'
+  src: url(/assets/Squareo.eot)
+  src: url(/assets/Squareo.eot?#iefix) format("embedded-opentype"), url(/assets/Squareo.ttf) format("truetype"), url(/assets/Squareo.woff) format("woff"), url(/assets/Squareo.svg#Squareo) format("svg")
+  font-weight: normal
+  font-style: normal
+@font-face
+  font-family: 'third-font'
+  src: url(/assets/Squared_Display.eot)
+  src: url(/assets/Squared_Display.eot?#iefix) format("embedded-opentype"), url(/assets/Squared_Display.ttf) format("truetype"), url(/assets/Squared_Display.woff) format("woff"), url(/assets/Squared_Display.svg#Squared_Display) format("svg")
+  font-weight: normal
+  font-style: normal
+
 
 //rotation
 @keyframes rotation
@@ -82,15 +103,89 @@ $primary-color: #003346
   to
     +rotate(360)
 
+@keyframes dash
+  0%
+    stroke-dashoffset: 0
+  100%
+    stroke-dashoffset: 200
+@keyframes undash
+  0%
+    stroke-dashoffset: 50
+  100%
+    stroke-dashoffset: 0
+@keyframes circleAnimation
+  0%
+    border: 2px solid white
+    background-color: $primary-color
+    visibility: hidden
+    margin:
+      left: 0px
+      top: 30px
+    height: 60px
+    width: 60px
+    opacity: 1
+    filter: blur(0px)
+  20%
+    border: 3px solid white
+    background-color: $primary-color
+    visibility: visible
+    margin:
+      left: -6px
+      top: 24px
+    height: 72px
+    width: 72px
+    opacity: 1
+    filter: blur(0px)
+  50%
+    background-color: $primary-color
+  75%
+    opacity: 0.6
+    filter: blur(0.7px)    
+  100%
+    border: 4px solid white
+    background-color: ghostwhite
+    visibility: visible
+    margin:
+      left: -6px
+      top: 24px
+    height: 72px
+    width: 72px
+    opacity: 0.5
+    filter: blur(1px)
+@keyframes circleInanimation
+  0%
+    opacity: 0.5
+    filter: blur(1px)
+    margin:
+      left: -6px
+      top: 24px
+    height: 72px
+    width: 72px
+  90%
+    visibility: visible
+  100%
+    opacity: 0.0
+    filter: blur(5px)
+    visibility: hidden
+    margin:
+      left: -6px
+      top: 24px
+    height: 72px
+    width: 72px
 #presentation
-  top: 10px
-  height: 450px
-.circle
-  border: 2px solid white
-  border-radius: 50%
-  height: 60px
-  width: 60px
+  margin:
+    top: 5px
+  height: 500px
+#face
+  background-image: url("/assets/face.png")
+  background-repeat: no-repeat
+  background-size: 100% auto
+  height: 394px
+  margin-left: 448px
+  margin-top: 69px
   position: absolute
+  width: 247px
+  display: none
 
 #pres-top
   height: 90px
@@ -99,13 +194,55 @@ $primary-color: #003346
     left: auto
     right: auto
   width: 360px
+.circle
+  border: 2px solid white
+  border-radius: 50%
+  height: 60px
+  width: 60px
+  position: absolute
+  cursor: pointer
+  z-index: 2
 #circle-top-left
   margin-top: 30px
+.line
+  position: absolute
+#circle-top-left-arrond 
+  visibility: hidden
+  position: absolute
+  margin:
+    top: 24px
+    left: -6
+  z-index: 1
+  border: 4px solid white
+  background-color: ghostwhite
+  height: 72px
+  width: 72px
+#line-top-left
+  margin:
+    left: 47px
+    top: 84px
+  z-index: 5
+#pict-circle-top-left
+  margin:
+    left: 7px
+    top: 13px
+  position: absolute
+  cursor: pointer
 #circle-top-middle
   margin-left: 140px
+#line-top-middle
+  margin:
+    left: 169px
+    top: 60px
+  z-index: 5
 #circle-top-right
   margin-left: 280px
   margin-top: 30px
+#line-top-right
+  margin:
+    left: 255px
+    top: 85px
+  z-index: 5
 
 #pres-middle
   height: 350px
@@ -135,16 +272,34 @@ $primary-color: #003346
     left: 2px
     top: 72px
 #who-i-am
-  color: white
-  font:
-    family: 'first-font'
-    size: 42px
-  margin-top: 134px
+  margin-top: 105px
   position: absolute
   text-align: center
-  text-shadow: 1px 1px 1px
   width: 580px
+  cursor: default
   z-index: 6
+  #who-jimmy
+    color: ghostwhite
+    font:
+      family: 'first-font'
+      size: 45px
+    text-shadow: 0px 0px 2px
+  #who-dev
+    height: 50px
+    color: lightblue
+    font:
+      family: 'second-font'
+      size: 48px
+  #who-dev:hover
+    font:
+      family: 'first-font'
+    color: ghostwhite
+    text-shadow: 0px 0px 2px lightblue
+  span
+    display: block
+    margin-left: auto
+    margin-right: auto
+    width: 415px
 #circle
   border: 2px solid white
   border-radius: 50%

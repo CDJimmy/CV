@@ -22,9 +22,8 @@
 en:
   presentation:
     me: "Jimmy Charrier"
-    hello: "Hello world"
     title: "%{man}'s Career portfolio"
-    who: "Who is %{man} ?"
+    dev: "Web Developer"
 
 
 
