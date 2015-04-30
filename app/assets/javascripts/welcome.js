@@ -9,6 +9,7 @@ $( document ).ready(function() {
 function animLine(e) {
   lineAnim = getLines(e);
   circleAnim = getCircle(e);
+  circleAnim.css('visibility', 'visible')
   animations(lineAnim, 'dash', '8s', 'infinite', 'linear');
   animations(circleAnim, 'circleAnimation', '0.5s', '1', 'linear', 'forwards');
 }
@@ -16,7 +17,7 @@ function inanimeLine(e) {
   lineAnim = getLines(e);
   circleAnim = getCircle(e);
   animations(lineAnim, 'undash', '2s', '1', 'ease-in-out');
-  animations(circleAnim, 'circleInanimation', '3s', '1', 'linear', 'forwards');
+  animations(circleAnim, 'circleInanimation', '2s', '1', 'linear', 'forwards');
 }
 function getLines(elem) {
   el = $(elem);
