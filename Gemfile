@@ -18,7 +18,7 @@ group :assets do
   # Use SCSS for stylesheets
   gem 'sass-rails', '~> 5.0'
   # Use compass for sass framework
-  gem 'compass-rails'
+  gem 'compass-rails', '1.1.7'
 end
 
 # Use bootstrap for responsive design
