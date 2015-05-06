@@ -30,6 +30,7 @@ $primary-color: #003346
   -moz-animation: $animation
   -webkit-animation: $animation
   animation: $animation
+
 //animation-name
 @mixin animation-name($name...)
   -webkit-animation-name: $name
@@ -173,6 +174,10 @@ $primary-color: #003346
     height: 72px
     width: 72px
 
+.hidden
+  opacity: 0
+.visible
+  opacity: 1
 
 #presentation
   margin:
@@ -355,3 +360,32 @@ $primary-color: #003346
   +rotate(30)
 #burst-12:after
   +rotate(60)
+
+@keyframes walk
+  from 
+    background-position:  0px 0px
+    //left: 208px
+  to
+    background-position:  -800px 0px
+    //left: 228px
+#map
+  width: 400px
+  height: 300px
+  margin-left: auto
+  margin-right: auto
+  top: 50%
+.lemmings
+  position: absolute
+  width: 100px
+  height: 100px
+  display: block
+  animation: walk 0.8s infinite steps(8)
+  +scale(0.2)
+.right
+  background: url('/assets/lemmings_walk_right.png')
+.left
+  background: url('/assets/lemmings_walk_left.png')   
+#lem2
+  left: 820px
+#lem3
+  //left: 175px

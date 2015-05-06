@@ -5,7 +5,7 @@
   <div id="pres-top">
     <div id="top-left">
 <!-- first menu option -->
-      <div class="circle" data-id="top-left" id="circle-top-left" onmouseover="animLine(this)" onmouseout="inanimeLine(this)">
+      <div class="circle" data-id="top-left" id="circle-top-left" onmouseover="animLine(this)" onmouseout="inanimeLine(this)" title="<%= t('warning.progress') %>">
         <div id="pict-circle-top-left">
           <svg class="heart-icon heart-icon-2" viewBox="0 0 90.65 85.04" height="37px" width="43px" version="1.1">
             <path class="heart-2" d=" M45.137,23.041c4.912-24.596,40.457-27.775,42.128-0.435c1.398,22.88-21.333,40.717-42.128,50.522 M45.137,23.041
@@ -21,13 +21,13 @@
           <g fill="none" stroke="white" stroke-width="2">
             <path stroke-dasharray="4,5" d="M0 0 l37 53" stroke-dashoffset="0.00"/>
           </g>
-          Sorry, your browser does not support inline SVG.
+          <%= t('warning.svg') %>
         </svg>
       </div>
     </div>
 <!-- second menu option -->
     <div id="top-middle">
-      <div class="circle" data-id="top-middle" id="circle-top-middle" onmouseover="animLine(this)" onmouseout="inanimeLine(this)">
+      <div class="circle" data-id="top-middle" id="circle-top-middle" onmouseover="animLine(this)" onmouseout="inanimeLine(this)" title="<%= t('warning.progress') %>">
         <div id="pict-circle-top-middle">
           <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="60" height="60" id="svg2" viewBox="0 -7 63 83">
             <defs id="defs4"/>
@@ -89,13 +89,13 @@
           <g fill="none" stroke="white" stroke-width="5">
             <path stroke-dasharray="4,5" d="M0 0 l0 48" />
           </g>
-          Sorry, your browser does not support inline SVG.
+          <%= t('warning.svg') %>
         </svg>
       </div>
     </div>
 <!-- third menu option -->
     <div id="top-right">
-      <div class="circle" data-id="top-right" id="circle-top-right" onmouseover="animLine(this)" onmouseout="inanimeLine(this)">
+      <div class="circle" data-id="top-right" id="circle-top-right" onmouseover="animLine(this)" onmouseout="inanimeLine(this)" title="<%= t('warning.progress') %>">
         <div id="pict-circle-top-right">
           <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="60" height="60" id="svg2">
             <defs id="defs4"/>
@@ -135,7 +135,7 @@
           <g fill="none" stroke="white" stroke-width="2">
             <path stroke-dasharray="4,5" d="M37 1 l-36 45" />
           </g>
-          Sorry, your browser does not support inline SVG.
+          <%= t('warning.svg') %>
         </svg>
       </div>
     </div>
@@ -147,8 +147,8 @@
     <div id="trapezoid-inside">
     </div>
     <div id="who-i-am">
-      <span id="who-jimmy"><%= I18n.t('presentation.me') %></span>
-      <span id="who-dev"><%= I18n.t('presentation.dev') %></span>
+      <span id="who-jimmy"><%= t('presentation.me') %></span>
+      <span id="who-dev"><%= t('presentation.dev') %></span>
     </div>
     <div id="circle">
     </div>

@@ -24,3 +24,6 @@ fr:
     me: "Jimmy Charrier"
     title: "Portfolio de %{man}"
     dev: "Développeur Web"
+  warning:
+    progress: "En cours de développement"
+    svg: "Désolé, votre navigateur internet ne permet pas l'affichage de l'image SVG."

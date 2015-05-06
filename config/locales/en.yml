@@ -24,6 +24,9 @@ en:
     me: "Jimmy Charrier"
     title: "%{man}'s Career portfolio"
     dev: "Web Developer"
+  warning:
+    progress: "Work in progress"
+    svg: "Sorry, your browser does not support inline SVG."
 
 
 
