@@ -104,16 +104,19 @@ $primary-color: #003346
   to
     +rotate(360)
 
+//animate line dash
 @keyframes dash
   0%
     stroke-dashoffset: 0
   100%
     stroke-dashoffset: 200
+//unanimate line dash
 @keyframes undash
   0%
     stroke-dashoffset: 50
   100%
     stroke-dashoffset: 0
+//anime circle when mouse over
 @keyframes circleAnimation
   0%
     border: 2px solid white
@@ -153,6 +156,7 @@ $primary-color: #003346
     width: 72px
     opacity: 0.5
     filter: blur(1px)
+//inanime circle when mouse out
 @keyframes circleInanimation
   0%
     opacity: 0.5
@@ -174,14 +178,64 @@ $primary-color: #003346
     height: 72px
     width: 72px
 
+@keyframes dashboardTopLeft
+  0%
+    right: 58%
+    margin-top: 30px
+    top: 13%
+    +scale(1)
+  100%
+    right: 10px
+    margin-top: 0px
+    top: 25%
+    +scale(0.7)
+@keyframes dashboardTopMiddle
+  0%
+    right: 50%
+    top: 11%
+    +scale(1)
+  100%
+    right: 10px
+    top: 40%
+    +scale(0.7)
+@keyframes dashboardTopRight
+  0%
+    right: 40%
+    margin-top: 30px
+    top: 13%
+    +scale(1)
+  100%
+    right: 10px
+    margin-top: 0px
+    top: 55%
+    +scale(0.7)
+
 .hidden
   opacity: 0
 .visible
   opacity: 1
 
+
+#all
+  position: absolute
+  //background: url(/assets/background.png)
+  //background-repeat: repeat-y
+  //background-position: top
+  width: 100%
+  top: 0px
+  height: 1600px
+  z-index: 5
+  opacity: 0.03
+  margin: 0
+  padding: 0
+
+
+#slide1
+  height: 1260px
+  background: url(/assets/metal2.png) center 0 no-repeat fixed
 #presentation
-  margin:
-    top: 5px
+  padding:
+    top: 40px
   height: 500px
 #face
   background-image: url("/assets/face.png")
@@ -194,6 +248,13 @@ $primary-color: #003346
   width: 247px
   display: none
 
+#home 
+  position: fixed
+  right: 10px
+  top: 5%
+  visibility: hidden
+  width: 60px
+  z-index: 6
 #pres-top
   height: 90px
   display: table
@@ -225,10 +286,11 @@ $primary-color: #003346
 #top-left
   height: 141px
   position: absolute
-  width: 90px
+  width: 60px
   margin:
     top: 30px
     left: 110px
+  z-index: 6
 #line-top-left
   margin:
     left: 47px
@@ -244,7 +306,8 @@ $primary-color: #003346
   height: 118px
   margin-left: 250px
   position: absolute
-  width: 63px
+  width: 60px
+  z-index: 6
 #line-top-middle
   margin:
     left: 28px
@@ -256,6 +319,7 @@ $primary-color: #003346
   margin-top: 30px
   position: absolute
   width: 60px
+  z-index: 6
 #line-top-right
   margin:
     left: -27px
@@ -275,12 +339,9 @@ $primary-color: #003346
   width: 580px
   margin-top: 70px
 #trapezoid, #trapezoid-inside
-  border:
-    left: 18px ridge transparent
-    right: 35px ridge transparent
+  +transform(rotateX(29deg) rotateZ(8deg) rotateY(-15deg))
   height: 0
   width: 580px
-  +skew(0,-1)
   position: absolute
 #trapezoid-inside
   border-top: 176px solid $primary-color
@@ -361,31 +422,236 @@ $primary-color: #003346
 #burst-12:after
   +rotate(60)
 
-@keyframes walk
+
+
+
+
+
+@keyframes spriteLemmings
   from 
     background-position:  0px 0px
     //left: 208px
   to
     background-position:  -800px 0px
     //left: 228px
+
+@keyframes spriteExit
+  from 
+    background-position:  0px 0px
+    //left: 208px
+  to
+    background-position:  -420px 0px
+    //left: 228px
+
+
+@keyframes rotateMiddle
+  0%
+    +transform(rotateY(-90deg))
+  10%
+    +transform(rotateY(-90deg))
+  25%
+    +transform(rotateY(0deg))
+  100%
+    +transform(rotateY(0deg) )
+@keyframes rotateBottom
+  0%
+    +transform(rotateY(90deg))
+  25%
+    +transform(rotateY(90deg))
+  50%
+    +transform(rotateY(0deg))
+  100%
+    +transform(rotateY(0deg))
+@keyframes rotateB
+  0%
+    +transform(rotateY(90deg) rotateX(-90deg) translateZ(227px))
+  25%
+    +transform(rotateY(90deg) rotateX(-90deg) translateZ(227px))
+  50%
+    +transform(rotateY(0deg) rotateX(-90deg) translateZ(227px))
+  100%
+    +transform(rotateY(0deg) rotateX(-90deg) translateZ(227px))
+@keyframes rotateTop
+  0%
+    +transform(rotateY(180deg)) 
+  50%
+    +transform(rotateY(180deg)) 
+  100%
+    +transform(rotateY(0deg)) 
+@keyframes rotateT
+  0%
+    +transform(rotateZ(180deg) rotateX(90deg) translateZ(227px))
+  50%
+    +transform(rotateY(180deg) rotateX(90deg) translateZ(227px))
+  100%
+    +transform(rotateY(0deg) rotateX(90deg) translateZ(227px))
+@keyframes rotateCube
+  0%
+    +transform(translateZ(225px) rotateX(0deg) rotateY(0deg) rotateZ(-90deg))
+  10%
+    +transform(translateZ(225px) rotateX(0deg) rotateY(0deg) rotateZ(-90deg))
+  16%
+    +transform(translateZ(225px) rotateX(-90deg) rotateY(0deg) rotateZ(-90deg))
+  23%
+    +transform(translateZ(225px) rotateX(-90deg) rotateY(0deg) rotateZ(-90deg))
+  30%
+    +transform(translateZ(225px) rotateX(-90deg) rotateY(0deg) rotateZ(0deg))
+  35%
+    +transform(translateZ(225px) rotateX(-90deg) rotateY(0deg) rotateZ(0deg))
+  42%
+    +transform(translateZ(225px) rotateX(-180deg) rotateY(0deg) rotateZ(0deg))
+  48%
+    +transform(translateZ(225px) rotateX(-180deg) rotateY(0deg) rotateZ(0deg))
+  54%
+    +transform(translateZ(225px) rotateX(-180deg) rotateY(0deg) rotateZ(180deg))
+  75%
+    +transform(translateZ(225px) rotateX(0deg) rotateY(0deg) rotateZ(180deg))  
+  89%
+    +transform(translateZ(225px) rotateX(0deg) rotateY(0deg) rotateZ(0deg))
+  100%
+    +transform(translateZ(225px) rotateX(0deg) rotateY(0deg) rotateZ(0deg))
+@keyframes iluminateCubeText
+  0%
+    color: #333333
+    text-shadow: 0 0 0
+  50%
+    color: ghostwhite
+    text-shadow: 0 0 15px lightblue
+  100%
+    color: ghostwhite
+    text-shadow: 0 0 0
+@keyframes transparantCube
+  0%
+    border: 3px solid red
+  50%
+    border: 3px solid red
+  100%
+    border: 2px solid rgba(255, 0, 0, 0.35)
+
+
+#slide2
+  background-color: black
+  height: 1300px
+  //background: url(/assets/lemmings_map2.png) center 0 no-repeat fixed
+  //background-size: 100%
+  background-color: black
+  margin-left: -1%
+  width: 102%
+  box-shadow: 0px -25px 25px black
 #map
-  width: 400px
-  height: 300px
-  margin-left: auto
-  margin-right: auto
-  top: 50%
+  margin:
+    left: 13%
+  background: url(/assets/lemmings_map2.png)
+  background-repeat: no-repeat
+  background-size: 100%
+  //background-attachment: fixed
+  width: 75%
+  //height: 412px
+  border: none !important
+  opacity: 0.75
 .lemmings
   position: absolute
   width: 100px
   height: 100px
   display: block
-  animation: walk 0.8s infinite steps(8)
+  animation: spriteLemmings 0.8s infinite steps(8)
+  transform-origin: 0 0
   +scale(0.2)
 .right
   background: url('/assets/lemmings_walk_right.png')
 .left
-  background: url('/assets/lemmings_walk_left.png')   
-#lem2
-  left: 820px
-#lem3
-  //left: 175px
+  background: url('/assets/lemmings_walk_left.png')
+.fall
+  background: url('/assets/lemmings_fall2.png')
+.stop
+  background: url('/assets/lemmings_stop.png')
+.finish
+  background: url('/assets/lemmings_finish.png')
+
+#place
+  margin-bottom: 60px
+  padding-top: 60px
+#rubicks
+  height: 350px
+  margin-left: auto
+  margin-right: auto
+  //background-color: black
+  width: 350px
+  transform-style: preserve-3d
+  +transform(translateZ(225px) rotateX(0deg) rotateY(0deg))
+  perspective: 100000px
+.ruby-cube
+  border: 3px solid black
+  border-radius: 15px
+  font-size: 30px
+  height: 150px
+  margin: 1px
+  position: absolute
+  text-align: center
+  width: 150px
+  background-color: black
+  font-family: "first-font"
+  font-size: 40px
+#rubicks > div >
+  div
+    width: 450px
+    height: 150px
+  div > div
+    +transform(translate3d(150px, 0px, 0px))
+  div > *:first-child 
+    +transform(translate3d(0px, 0px, 0px))
+  div > *:last-child
+    +transform(translate3d(300px, 0px, 0px))
+
+#rubicks > div
+  width: 450px
+  height: 450px
+  position: absolute
+  //background-color: black
+  transform-style: preserve-3d
+#rub-red
+  div > div
+    border-color: red
+  +transform(translate3d(-1px, 0px, 227px))
+#rub-white
+  div > div
+    border-color: white
+  +transform(rotateX(90deg) translateZ(227px))
+#rub-orange
+  div > div
+    border-color: orange
+  +transform(rotateY(-180deg) translateZ(227px))
+#rub-yellow
+  div > div
+    border-color: yellow
+  +transform(rotateX(-90deg) translateZ(227px))
+#rub-green
+  div > div
+    border-color: green
+  +transform(rotateY(-90deg) translateZ(227px))
+#rub-blue
+  div > div
+    border-color: blue
+  +transform(rotateY(90deg) translateZ(227px))
+.rub-top
+  transform-origin: 227px 0 -227px
+  //transform: rotateY(180deg)
+.rub-mid
+  transform-origin: 227px 0 -227px
+  //transform: rotateY(-90deg)
+.rub-bot
+  transform-origin: 227px 0 -227px
+  //transform: rotateY(90deg)
+
+.cube-txt-right 
+  position: absolute
+  right: 2px
+.cube-txt-left 
+  position: absolute
+  left: 2px
+.cube-txt-top
+  position: absolute
+  top: 10px
+.cube-txt-bot
+  position: absolute
+  bottom: 10px
