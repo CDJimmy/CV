@@ -534,7 +534,6 @@ $primary-color: #003346
   height: 1300px
   //background: url(/assets/lemmings_map2.png) center 0 no-repeat fixed
   //background-size: 100%
-  background-color: black
   margin-left: -1%
   width: 101%
   box-shadow: 0px -25px 25px black
@@ -572,11 +571,11 @@ $primary-color: #003346
   margin-bottom: 60px
   padding-top: 60px
 #rubicks
-  height: 350px
+  height: 450px
   margin-left: auto
   margin-right: auto
   //background-color: black
-  width: 350px
+  width: 450px
   transform-style: preserve-3d
   +transform(translateZ(225px) rotateX(0deg) rotateY(0deg))
   perspective: 100000px
@@ -612,26 +611,32 @@ $primary-color: #003346
 #rub-red
   div > div
     border-color: red
+    background-color: darkred
   +transform(translate3d(-1px, 0px, 227px))
 #rub-white
   div > div
     border-color: white
+    background-color: snow
   +transform(rotateX(90deg) translateZ(227px))
 #rub-orange
   div > div
     border-color: orange
+    background-color: darkorange
   +transform(rotateY(-180deg) translateZ(227px))
 #rub-yellow
   div > div
     border-color: yellow
+    background-color: gold
   +transform(rotateX(-90deg) translateZ(227px))
 #rub-green
   div > div
     border-color: green
+    background-color: darkgreen
   +transform(rotateY(-90deg) translateZ(227px))
 #rub-blue
   div > div
     border-color: blue
+    background-color: darkblue
   +transform(rotateY(90deg) translateZ(227px))
 .rub-top
   transform-origin: 227px 0 -227px
@@ -639,6 +644,7 @@ $primary-color: #003346
 .rub-mid
   transform-origin: 227px 0 -227px
   //transform: rotateY(-90deg)
+  background-color: black
 .rub-bot
   transform-origin: 227px 0 -227px
   //transform: rotateY(90deg)
@@ -655,3 +661,142 @@ $primary-color: #003346
 .cube-txt-bot
   position: absolute
   bottom: 10px
+
+
+@keyframes spritePlayer
+  from 
+    background-position:  0px 0px
+  to
+    background-position:  -160px 0px
+
+@keyframes spritePlayerWin
+  from 
+    background-position:  0px 0px
+  to
+    background-position:  -180px 0px
+
+@keyframes circleScale
+  0%
+    +scale(1)
+  75%
+    +scale(1.3)
+  100%
+    +scale(1)
+
+
+#slide3
+  height: 1300px
+  //background-color: black
+  margin-left: -1%
+  width: 101%
+  box-shadow: 0px -25px 25px black
+
+#rugby
+  height: 600px
+
+#stadium
+  //cursor: url("/assets/walk_back.gif"), auto
+  height: 650px
+  margin-top: 30px
+  overflow: hidden
+  width: 599px
+  cursor: url('/assets/ball.png'), auto
+#stadium-goal
+  height: 205px
+  left: 42px
+  position: absolute
+  top: 66px
+  width: 544px
+#around-player, #around-player-active
+  position: absolute
+  height: 50px
+  width: 40px
+  left: 275px
+  top: 245px
+#around-player-active
+  cursor: none
+#player-circle
+  position: absolute
+  top: 25px
+  width: 40px
+  height: 20px
+  border: 4px solid white
+  border-radius: 50%
+  box-shadow: 0px 0px 10px white
+  z-index: 1
+  animation: circleScale 0.8s infinite linear
+
+
+#player, #player-active, #player-inactive, #player-win 
+  background: url('/assets/player_wait.png')
+  height: 30px
+  left: 10px
+  position: absolute
+  top: 8px
+  width: 20px
+  z-index: 2
+
+#player-active
+  background: url('/assets/player.png')
+  animation: spritePlayer 0.8s infinite steps(8)
+  cursor: none
+#player-win
+  background: url('/assets/player_win.png')
+  animation: spritePlayerWin 1s 1 steps(9)
+  cursor: pointer
+
+#walk
+  height: 600px
+
+@media (max-width: 770px)
+  #rugby
+    height: 900px
+  #stadium
+    height: 900px
+    margin-top: 30px
+    overflow: hidden
+    width: 100%
+  #stadium-goal
+    height: 205px
+    left: 42px
+    position: absolute
+    top: 66px
+    width: 544px
+  #stadium img
+    width: 100%
+  #around-player, #around-player-active
+    position: absolute
+    height: 70px
+    width: 60px
+    left: 50%
+    top: 50%
+  #around-player-active
+    cursor: none
+  #player, #player-active, #player-inactive 
+    background: url('/assets/player.png')
+    height: 30px
+    left: 10px
+    position: absolute
+    top: 10px
+    width: 20px
+    cursor: pointer
+    +scale(1.5)
+  #player-active
+    animation: spritePlayer 0.8s infinite steps(8)
+    background: url('/assets/player.png')
+    cursor: none
+
+#stade
+  height: 2036px
+  position: relative
+  width: 600px
+  background-image: url('/assets/rugby.jpg')
+  div
+    background-color: blue
+    height: 50px
+    left: 350px
+    position: relative
+    top: 100px
+    width: 30px
+    
+
