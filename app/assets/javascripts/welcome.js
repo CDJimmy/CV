@@ -30,7 +30,7 @@ $(window).scroll(function(event){
   var st = $(this).scrollTop();
   var scroll_down_dashboard = 40;             // set to whatever you want it to be
   var scroll_up_dashboard = 300;
-  var scroll_down_cube = $('#slide2').offset().top - 200;
+  var scroll_down_cube = $('#slide2').offset().top - 550;
   var scroll_down_sport = $('#slide3').offset().top - 200;
   if(y_scroll_pos > scroll_down_dashboard && st > lastScrollTop) {
     moveDashboard();
@@ -136,7 +136,8 @@ function moveCube()
   {
     animations(horizontalTop[index], 'rotateTop', '9s', '1', 'linear', 'forwards');
   }
-  //animations(hTop, 'rotateT', '8s', '1', 'linear', 'forwards');
+  animations(hTop, 'rotateT', '9s', '1', 'linear', 'forwards');
+  
   animations(cube, 'rotateCube', '9s', '1', 'linear', 'forwards');
   var text = $('#rub-red p');
   var borderCube = $('#rubicks > div > div > div');
@@ -155,6 +156,7 @@ function initCube()
   $('.rub-top, .rub-mid, .rub-bot').attr('style', '');
   $('.ruby-cube').attr('style', '');
   $('#rub-red p').attr('style', '');
+  $('#rub-white').attr('style', '');
   $('#rubicks').attr('style', '');
   $('#rub-red p').css('color', '#333333');
 }
@@ -202,18 +204,6 @@ function initRugby()
   player.css('left', positionLeft+'px');
   player.css('top', positionTop+'px');
 }
-function initRugbyEnemies()
-{
-  lines = getRandomArbitrary(3, 5);
-  //terrain : 543px large // joueur : 20px large
-  // entre 5 et 12 mecs
-  
-  for(var i = 0; i< lines; i++)
-  {
-    
-  }
-  
-}
 function playRugby()
 {
   if($('#player').length != 0)
@@ -245,10 +235,6 @@ function stopRugby()
 {
   $('#player-active').attr('id', 'player');
 }
-function eventRugby()
-{
-
-}
 function winRugby()
 {
   $('#player-active').attr('id', 'player-win'); 
@@ -258,10 +244,9 @@ function winRugby()
 }
 
 var lineGoal = 0;
-var enemies = new Array();
 function rugbyInGame(el, e)
 {
-    var mouseLeft = Math.round(e.pageX - $(e.currentTarget).offset().left);
+    var mouseLeft = Math.round(e.pageX - $(e.currentTarget).offset().left  );
     var mouseTop = (e.pageY - $(e.currentTarget).offset().top);
     var limitRight = $('#stadium').width() - el.width();
     var limitBottom = $('#stadium').height() - el.height()*0.4;
@@ -274,21 +259,7 @@ function rugbyInGame(el, e)
     {
       el.css('top', mouseTop + 'px');
     }
-    if( $('#enemy').length !=0)
-    {
-      var player = new Array();
-      player[0] = el.position().left + 11;
-      player[1] = player[0] + el.first().width()-22;
-      player[2] = el.position().top +11;
-      player[3] = player[2] + el.first().height()-22;
-      //var enemies = $('#enemy-rugby');
-      if( (player[2] <= enemy.position().top + enemy.height() && player[3] >= enemy.position().top)
-     && (player[0] <= enemy.position().left + enemy.width() && player[1] >= enemy.position().left) )
-      {
-        enemy.css('background-color', 'red');
-      }
-    }
-    if (mouseTop< lineGoal -el.height())
+    if (mouseTop< lineGoal - el.height())
     {
       winRugby();
     }
@@ -312,8 +283,4 @@ function playStadium()
 }
 
 
-
-function getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
-}
 
