@@ -15,6 +15,19 @@ jQuery(document).ready(function($) {
       rugbyInGame($('#around-player-active'), event);
     }
   });
+
+  $('.blind-picture').on('click', function (e){
+    blind(e.target);
+  });
+
+  $('.slideshow > div:first-child').on('click', function (e){
+    $('.slideshow').css('display', 'none');
+    $('.slideshow .actived').css('display', 'none');
+    $('.slideshow .actived').attr('class', '');
+    $('.slideshow > div:first-child').css('display', 'block');
+
+  });
+
 /*
   if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
     initMobileMovement();
@@ -246,16 +259,16 @@ function winRugby()
 var lineGoal = 0;
 function rugbyInGame(el, e)
 {
-    var mouseLeft = Math.round(e.pageX - $(e.currentTarget).offset().left  );
-    var mouseTop = (e.pageY - $(e.currentTarget).offset().top);
+    var mouseLeft = Math.round(e.pageX - $(e.currentTarget).offset().left);
+    var mouseTop = (e.pageY - $(e.currentTarget).offset().top + 30);
     var limitRight = $('#stadium').width() - el.width();
-    var limitBottom = $('#stadium').height() - el.height()*0.4;
+    var limitBottom = $('#stadium').height() + 20;
 
     if (mouseLeft<limitRight && mouseLeft > el.width()/2)
     {
       el.css('left', mouseLeft + 'px');
     }
-    if (mouseTop<limitBottom && mouseTop > el.height()/2)
+    if (mouseTop<limitBottom && mouseTop > el.height())
     {
       el.css('top', mouseTop + 'px');
     }
@@ -280,6 +293,18 @@ function playStadium()
     }, 30);
   }
 
+}
+
+function blind(el)
+{
+  $('.slideshow').css('display', 'block');
+  $('.slideshow > div:first-child').css('display', 'block');
+  var li = $($('.slideshow').find('li')[el.dataset.blindId -1])
+  li.css('display', 'block');
+  $('.slideshow .actived').attr('class', '');
+  li.attr('class', 'actived');
+  li.css('left', (($('.slideshow').width() /2) - (li.width() /2)));
+  li.css('top', (700/2 - li.height()/2));
 }
 
 

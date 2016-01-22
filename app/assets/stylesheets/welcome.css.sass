@@ -95,6 +95,12 @@ $primary-color: #003346
   src: url(/assets/Squared_Display.eot?#iefix) format("embedded-opentype"), url(/assets/Squared_Display.ttf) format("truetype"), url(/assets/Squared_Display.woff) format("woff"), url(/assets/Squared_Display.svg#Squared_Display) format("svg")
   font-weight: normal
   font-style: normal
+@font-face
+  font-family: 'score'
+  src: url(/assets/scoreboard.eot)
+  src: url(/assets/scoreboard.eot?#iefix) format("embedded-opentype"), url(/assets/scoreboard.ttf) format("truetype"), url(/assets/scoreboard.woff) format("woff"), url(/assets/scoreboard.svg#scoreboard) format("svg")
+  font-weight: normal
+  font-style: normal
 
 
 //rotation
@@ -270,6 +276,13 @@ $primary-color: #003346
   position: absolute
   cursor: pointer
   z-index: 2
+//
+
+#circle-top-right
+  background-color: gray
+  cursor: not-allowed
+//
+
 .line
   position: absolute
 .circle-arround
@@ -686,27 +699,50 @@ $primary-color: #003346
 
 #slide3
   height: 1300px
-  //background-color: black
+  background-image: url("/assets/bg2.png")
   margin-left: -1%
   width: 101%
   box-shadow: 0px -25px 25px black
   background-color: #007825
 
 #rugby
-  height: 600px
+  height: 700px
 #prez-stadium
   font-family: "first-font"
   font-size: 30px
   text-align: center
   color: white
 #prez-rugby
-  font-family: "first-font"
-  font-size: 15px
-  color: white
+  font-family: "score"
+  font-size: 20px
+  color: orange
+  text-shadow: 0 0 6px
   position: absolute
-  right: 60px
-  width: 100px
+  right: 80px
+  width: 115px
   top: 95px
+  text-align: center
+  > div:last-child
+    background-color: black
+    border-radius: 15px
+    position: absolute
+    left: 35px
+    width: 115px
+    > p:first-child
+      font-size: 35px
+    p
+      margin: 0px
+#prez-rugby-pot-left, #prez-rugby-pot-right
+  background-image: url("/assets/score_pot.png")
+  background-repeat: no-repeat
+  height: 127px
+  width: 23px
+  position: absolute
+  top: 37px
+  left: 52px
+  +scale(0.5)
+#prez-rugby-pot-right
+  left: 111px
 
 #stadium
   //cursor: url("/assets/walk_back.gif"), auto
@@ -759,12 +795,10 @@ $primary-color: #003346
   animation: spritePlayerWin 1s 1 steps(9)
   cursor: pointer
 
-#walk
-  height: 600px
-
 @media (max-width: 770px)
   #rugby
     height: 900px
+    padding-top: 30px
   #stadium
     height: 900px
     margin-top: 30px
@@ -799,12 +833,11 @@ $primary-color: #003346
     animation: spritePlayer 0.8s infinite steps(8)
     background: url('/assets/player.png')
     cursor: none
-
 #stade
-  height: 2036px
+  height: 1400px
   position: relative
   width: 600px
-  background-image: url('/assets/rugby.jpg')
+  background-image: url('/assets/rugby2.png')
   div
     background-color: blue
     height: 50px
@@ -813,4 +846,75 @@ $primary-color: #003346
     top: 100px
     width: 30px
     
+
+#walk
+  height: 700px
+#pres-walk
+  font-family: "first-font"
+  font-size: 30px
+  text-align: center
+  color: white
+#france-map
+  background-image: url("/assets/carte.png")
+  background-repeat: no-repeat
+  background-size: 630px 600px
+  margin-top: 9px
+  width: 650px
+  height: 630px
+  position: absolute
+  right: 50px
+#map-prez
+  background-image: url("/assets/carte_chiffres.png")
+  background-repeat: no-repeat
+  background-size: 235px auto
+  height: 350px
+  position: absolute
+  right: 35px
+  width: 240px
+
+.slideshow, .slideshow > div:first-child 
+  background-color: rgba(0, 0, 0, 0.3)
+  height: 100%
+  position: absolute
+  width: 100%
+  display: none
+  z-index: 10
+.slideshow > ul 
+  margin: auto
+  width: 50%
+.slideshow li 
+  position: absolute
+  display: none
+  z-index: 15
+.slideshow img
+  //+scale(0.7)
+  max-height: 600px
+  transform-origin: center top 0
+  border: 2px double black
+  box-shadow: 0 0 8px black
+  z-index: 15
+.blind-picture 
+  cursor: pointer
+  position: absolute
+#blind1 
+  height: 27px
+  left: 231px
+  top: 124px
+  width: 97px
+#blind2
+  height: 34px
+  left: 183px
+  top: 177px
+  width: 49px
+#blind3
+  height: 28px
+  left: 180px
+  top: 270px
+  width: 27px
+#blind4
+  height: 57px
+  left: 175px
+  top: 341px
+  width: 100px
+
 
