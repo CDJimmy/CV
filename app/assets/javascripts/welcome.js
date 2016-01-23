@@ -130,7 +130,7 @@ function animations(elem, val, duration, count, timing, mode) {
 function moveCube()
 {
   var cube = $('#rubicks');
-  var horizontalTop = [$('#rub-red-top'), $('#rub-blue-top'), $('#rub-orange-top'), $('#rub-green-top')];
+  var horizontalTop = [$('#rub-red-top'), $('#rub-blue-top'), $('#rub-orange-top'), $('#rub-green-top'), ('#rub-white-top')];
   var hTop = $('#rub-white');
   var horizontalMiddle = [$('#rub-red-middle'), $('#rub-blue-middle'), $('#rub-orange-middle'), $('#rub-green-middle')];
   var horizontalBottom = [$('#rub-red-bottom'), $('#rub-blue-bottom'), $('#rub-orange-bottom'), $('#rub-green-bottom')];
@@ -144,7 +144,7 @@ function moveCube()
   {
     animations(horizontalBottom[index], 'rotateBottom', '9s', '1', 'linear', 'forwards');
   }
-  //animations(hBot, 'rotateB', '8s', '1', 'linear', 'forwards');
+  animations(hBot, 'rotateB', '8s', '1', 'linear', 'forwards');
   for( index =0; index <4; index++)
   {
     animations(horizontalTop[index], 'rotateTop', '9s', '1', 'linear', 'forwards');
