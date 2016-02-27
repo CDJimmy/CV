@@ -1,4 +1,4 @@
-<div id="exo_js" class='container'>
+<div id="exo_js" class='containe'>
     <div class="form">
         <h1>User Manager</h1>
         <div>
@@ -7,12 +7,14 @@
         <div>
             <input type="hidden" id="id">
         </div>
-        <div>
+        <div style="display: flex;">
             <label for="civility" id="civility" name="civility">Civilité* :</label>
-            <input type="radio" name="civility" id="civility" value="m">M.
-            <input type="radio" name="civility" id="civility" value="mme">Mme
-            <input type="radio" name="civility" id="civility" value="mlle">Mlle
-            <input type="radio" name="civility" id="civility" value="dr">Dr
+            <div style="min-width: 255px;">
+                <label class="radio-label"><input type="radio" name="civility" id="civility" value="m">M.</label>
+                <label class="radio-label"><input type="radio" name="civility" id="civility" value="mme">Mme</label>
+                <label class="radio-label"><input type="radio" name="civility" id="civility" value="mlle">Mlle</label>
+                <label class="radio-label"><input type="radio" name="civility" id="civility" value="dr">Dr</label>
+            </div>
         </div>
         <div>
             <label for="last-name">Nom* :</label>
