@@ -1,0 +1,58 @@
+<div id="exo_js" class='containe'>
+    <div class="form">
+        <h1>User Manager</h1>
+        <div>
+            <span id="clear-form" class="button button-small button-red">Clear</soan>
+        </div>
+        <div>
+            <input type="hidden" id="id">
+        </div>
+        <div style="display: flex;">
+            <label for="civility" id="civility" name="civility">Civilité* :</label>
+            <div style="min-width: 255px;">
+                <label class="radio-label"><input type="radio" name="civility" id="civility" value="m">M.</label>
+                <label class="radio-label"><input type="radio" name="civility" id="civility" value="mme">Mme</label>
+                <label class="radio-label"><input type="radio" name="civility" id="civility" value="mlle">Mlle</label>
+                <label class="radio-label"><input type="radio" name="civility" id="civility" value="dr">Dr</label>
+            </div>
+        </div>
+        <div>
+            <label for="last-name">Nom* :</label>
+                    <input :required="required" type="text" name="last-name" id="last-name" title='' pattern="[A-Za-z_\- àèìòùÀÈáéíóúýÁÉâêîôûãñõäëïöüç]{3,50}">
+                    <span class="error-title">Ce champ obligatoire ne doit pas être vide, comporter plus de 50 caractères ni inclure de caractères non valides ($, <, >, etc.). Les tirets sont accéptés.</span>
+        </div>
+        <div>
+            <label for="first-name">Prenom* :</label>
+                    <input :required="required" type="text" name="first-name" id="first-name" title='' pattern="[A-Za-z_\- àèìòùÀÈáéíóúýÁÉâêîôûãñõäëïöüç]{3,50}">
+                    <span class="error-title">Ce champ obligatoire ne doit pas être vide, comporter plus de 50 caractères ni inclure de caractères non valides ($, <, >, etc.). Les tirets sont accéptés.</span>
+        </div>
+        <div>
+            <label for="age">Age* :</label>
+                    <input :required="required" type="number" name="age" id="age" min="18" max="129" title='' pattern="(1[8-9])|([2-9][0-9])|(1[0-2][0-9])">
+                    <span class="error-title">Ce champ obligatoire ne doit pas être vide, comporter de lettres où des caractères non valides ($, <, >, etc.). l'age doit être compris entre 18 et 120 ans.</span>
+        </div>
+        <div>
+            <label for="email">Courriel* :</label>
+<input :required="required" type="email" name="email" id="email" title='' pattern="([a-z0-9_.\-]+)@([da-z.\-]+)\.([a-z\.]{2,6})">
+                    <span class="error-title">Ce champ obligatoire ne doit pas être vide, comporter de majuscules où des caractères non valides ($, <, >, etc.). l'email doit être valide.</span>
+        </div>
+        <div>
+            <label for="color-background">Couleur fond :</label>
+            <input type="color" name="color-background" id="color-background" value="#7E89A2"></input>
+        </div>
+        <div>
+            <label for="color-title">Couleur titre :</label>
+            <input type="color" name="color-title" id="color-title" value="#082035"></input>
+        </div>
+ 
+        <div>
+            <span class="button button-middle button-blue" id="ajouter">Ajouter</span>
+        </div>
+    </div>
+        
+    <div id='users'>
+        <% @users.each do |user| %>
+            <%= render partial: "user", locals: { user: user } %>
+        <% end %>
+    </div>
+</div>

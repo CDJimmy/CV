@@ -1,0 +1,197 @@
+#exo_js
+    display: flex
+.form
+    border: 3px double gray
+    border-radius: 30px
+    color: ivory
+    font-family: arial
+    width: 30%
+    margin: 0 10px 10px
+    padding: 0 10px 10px
+    max-height: 460px
+    min-width: 390px
+    position: fixed
+    display: table
+    z-index: 10
+    > div
+        padding-bottom: 8px
+        position: relative
+    label 
+        display: inline-block
+        width: 120px
+    input 
+        display: inline-block
+        width: 250px
+        height: 28px
+        border-radius: 3px
+        color: black
+    input[type="radio"]
+        height: 20px
+        margin: 0
+        vertical-align: middle
+        width: 25px
+    input[type=color]
+        height: 30px
+        vertical-align: middle
+        width: 250px
+    .radio-label
+        width: 60px !important
+    .error-title
+        display: none
+    input:required
+        box-shadow: none
+    input:invalid
+        box-shadow: 0 0 3px red
+        outline: 1px solid #800000
+        outline-offset: -1px
+        &:hover
+            cursor: help
+            &+ .error-title
+                background-color: rgba(126, 137, 162, 1)
+                border: 2px solid ivory
+                border-radius: 12px
+                bottom: 50px
+                box-shadow: 4px 4px 7px black
+                display: block
+                left: 180px
+                padding: 8px
+                position: absolute
+                width: 400px
+                z-index: 10
+                &::before
+                    border-color: rgba(255, 255, 240, 1) transparent transparent
+                    border-style: solid
+                    border-width: 21px 23px 0
+                    content: ""
+                    height: 0
+                    left: 9px
+                    position: absolute
+                    top: 73px
+                    webkit-top: 70px
+                    width: 0
+                &::after
+                    border-color: rgba(126, 137, 162, 1) transparent transparent
+                    border-style: solid
+                    border-width: 19px 20px 0
+                    content: ""
+                    height: 0
+                    left: 12px
+                    position: absolute
+                    top: 72px
+                    width: 0
+
+#clear-form
+    bottom: 5px
+    position: absolute
+    right: 5px
+.button
+    border: 2px solid gray
+    border-radius: 11px
+    cursor: pointer
+    display: block
+    margin: 20px auto
+    text-align: center
+
+.button-small
+    width: 15%
+    padding: 7px 13px
+    min-width: 65px
+.button-middle
+    width: 30%
+    padding: 7px 13px
+    min-width: 90px
+.button-icon
+    padding: 1px
+.button-blue
+    background-color: #789af8
+    &:hover
+        background-color: #83b0ff
+        border-color: ivory
+.button-red
+    background-color: #e34d4d
+    border-color: #873838
+    &:hover
+        background-color: #E76666
+        border-color: ivory
+.button-orange
+    background-color: #df974e
+    border-color: #876438
+    &:hover
+        background-color: #ecb176
+        border-color: ivory
+    
+#users
+    color: white
+    width: 65%
+    display: flex
+    flex-flow: row wrap
+    position: absolute
+    right: 0
+.user-block
+    border: 3px solid
+    border-radius: 35px
+    display: block
+    height: 200px
+    margin: 5px
+    width: 32%
+    min-width: 280px
+    position: relative
+    background-color: gray
+    z-index: 5
+    &.on-drag
+    &.dropable
+        *
+            pointer-events: none
+        &.over
+            border: 3px dashed white
+            opacity: 1
+        box-shadow: 0 0 10px white
+        opacity: 0.8
+        transform: scale(0.9)
+        z-index: 100
+.user-block-title
+    background-color: grey
+    border-bottom: 3px solid
+    border-radius: 35px 35px 0 0
+    height: 53px
+    margin: 0
+    text-align: center
+    display: flex
+    > h3
+        margin: auto 0
+        max-width: 225px
+    > img
+        width: 32px
+        height: 32px
+        margin-top: 13px
+        cursor: pointer
+        &:first-child
+            margin-left: 6px
+        &:last-child
+            margin-right: 6px
+.user-block-content 
+    background-color: #003346
+    border-radius: 0 0 35px 35px
+    height: 142px
+    width: 100%
+    padding-top: 10px
+    font-size: 1.2em
+    p
+        margin-left: 20px
+    img
+        bottom: 0
+        cursor: move
+        height: 38px
+        position: absolute
+        right: 23px
+        width: 38px
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+<div class="user-block" id="user-<%= user.id %>" style="background-color: <%= user.colorBackground %>">
+    <div class="user-block-title containe" style="background-color: <%= user.colorBackground %>">
+        <img src="/assets/cours/edit.png" class="button button-orange button-icon">
+        <h3 class="email" style="color: <%= user.colorTitle %>"><%= user.email %></h3>
+        <img src="/assets/cours/delete.png" class="button button-red button-icon">
+    </div>
+    <div class="user-block-content"
+        data-id="<%= user.id %>"
+        data-civility="<%= user.civility %>"
+        data-last-name="<%= user.lastName %>"
+        data-first-name="<%= user.firstName %>"
+        data-age="<%= user.age %>"
+        data-email="<%= user.email %>"
+        data-color-background="<%= user.colorBackground %>"
+        data-color-title="<%= user.colorTitle %>"
+        data-index-order="<%= user.indexOrder %>"
+        >
+            
+        <p class="name"><%= "#{user.civility.titleize}. #{user.firstName.titleize} #{user.lastName.titleize}" %></p>
+        <p class="age"><%= "#{user.age} ans" %></p>
+        <img src="/assets/cours/move.png" class="button button-blue button-icon" draggable="true">
+    </div>
+</div>
