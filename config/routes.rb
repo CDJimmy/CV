@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
 root 'welcome#index'
+
 match 'welcome/testLemming' => 'welcome#testLemming', :via => :get
+
+match '/cours-js' => 'cours_js#exos', via: :get
+post '/request', :controller => 'cours_js', :action => 'create'
+post '/indexOrderRange', :controller => 'cours_js', :action => 'indexOrderRange'
+post '/delete', :controller => 'cours_js', :action => 'delete'
+    
+get '/users', :controller => 'cours_js', :action => 'users'
+get 'user-render' => 'cours_js#user'
+    
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

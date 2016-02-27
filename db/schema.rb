@@ -11,6 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160216135331) do
+
+  create_table "users", force: :cascade do |t|
+    t.integer  "indexOrder"
+    t.string   "firstName"
+    t.string   "lastName"
+    t.string   "civility"
+    t.integer  "age"
+    t.string   "email"
+    t.string   "colorBackground"
+    t.string   "colorTitle"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "users", ["id"], name: "index_users_on_id"
 
 end
